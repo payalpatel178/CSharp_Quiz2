@@ -1,0 +1,17 @@
+﻿<Window x:Class="csharp_quiz2.TabControl"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:csharp_quiz2"
+        mc:Ignorable="d"
+        Title="TabControl Example" Height="200" Width="300">
+    <DockPanel>
+        <TabControl x:Name="tabControl">
+            <TabItem Header="TabItem 1">
+                <CheckBox Content="show Another Tab" x:Name="chbTab" Checked="chbTab_Checked" Unchecked="chbTab_Unchecked"></CheckBox>
+            </TabItem>
+            <TabItem Header="TabItem 2" Visibility="Hidden" x:Name="tabItem2"></TabItem>
+        </TabControl>
+    </DockPanel>
+</Window>
