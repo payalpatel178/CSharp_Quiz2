@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,16 +22,18 @@ namespace csharp_quiz2
     public partial class StudentForm : Window
     {
         private ObservableCollection<Student> students = new ObservableCollection<Student>();
-        
+        List<Student> lstStudents = new List<Student>();
+
         public StudentForm()
         {
             InitializeComponent();
-            List<Student> lstStudents = new List<Student>();
+            
             lstStudents.Add(new Student(1, "Alice"));
             lstStudents.Add(new Student(2, "Bob"));
             lstStudents.Add(new Student(3, "Paul"));
             lstStudents.Add(new Student(4, "John"));
             lstStudents.Add(new Student(5, "Rahul"));
+            lbStudents.ItemsSource = students;
         }
 
         private void btnAddStudent_Click(object sender, RoutedEventArgs e)
@@ -42,10 +44,9 @@ namespace csharp_quiz2
                 {
                     if (txtBox.Text.Equals(i))
                     {
-                        MessageBox.Show("Adding");
+                        students.Add(lstStudents[i]);   
                     }
-                }
-                lbStudents.ItemsSource = students;
+            }
             }
             else
             {
@@ -59,6 +60,10 @@ namespace csharp_quiz2
         public int id;
         public string name;
 
+        public Student()
+        {
+            
+        }
         public Student(int id, string name)
         {
             this.id = id;
